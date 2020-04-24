@@ -8,3 +8,13 @@ flutter create flutter_xx
 ```
 flutter run -d 'iPhone x'
 ```
+
+# flutterのライブラリサイト
+
+```
+https://pub.dev/
+
+pubspec.yaml 内に情報追加
+
+flutter pub get
+```

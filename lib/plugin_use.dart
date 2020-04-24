@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_len/plugin_use.dart';
+import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
-void main() => runApp(PluginUse());
-
-class MyApp extends StatelessWidget {
+class PluginUse extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutterのプラグイン使用',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -47,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
+              style: TextStyle(color: ColorUtil.color('#89ee00')),
             ),
             Text(
               '$_counter',
