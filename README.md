@@ -18,3 +18,20 @@ pubspec.yaml 内に情報追加
 
 flutter pub get
 ```
+
+# StatelessWidget(state変換無しのwidget)
+```
+静的ページのこと
+
+- Container
+- Text
+- Icon
+- CloseButton
+- BackButton
+- Chip
+- Divider
+- Card
+- AlertDialog
+
+
+```

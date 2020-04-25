@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_len/less_group_page.dart';
 import 'package:flutter_len/plugin_use.dart';
+import 'package:flutter_len/statelesswidget_test.dart';
 
-void main() => runApp(PluginUse());
+void main() => runApp(StateLessWidgetTest());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
