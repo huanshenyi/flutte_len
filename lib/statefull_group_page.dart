@@ -41,42 +41,28 @@ class _StateFullGroupState extends State<StateFullGroup> {
             ? RefreshIndicator( //リロードの内部ListViewである必要があります
                child: ListView(
                  children: <Widget>[
+                   Image.network(
+                       "https://lh3.googleusercontent.com/OQicdb5sirirCCTLq2Z1J4tR_lU1DuYi7NMlaGvYBIYoi9jUuhI2Li4U_P3PDB1C4VcKtCLIoxyZX6EWPqeSfAgire5ktt0=s520-c",
+                     width: 100,
+                     height: 100,
+                   ),
+                   TextField( //入力欄
+                     // 入力欄のスタイル
+                     decoration: InputDecoration(
+                       contentPadding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                       hintText: "何か入力して",
+                       hintStyle: TextStyle(fontSize: 15)
+                     ),
+                   ),
                    Container(
-                     decoration: BoxDecoration(color: Colors.white),
-                     alignment: Alignment.center,
-                     child: Column(
+                     height: 100,
+                       margin: EdgeInsets.only(top: 10),
+                     decoration: BoxDecoration(color: Colors.lightGreenAccent),
+                     child: PageView( //いわゆるswiper スライダー
                        children: <Widget>[
-                         Text("I am Text",style: TextStyle(color: Colors.blue)),
-                         Icon(Icons.android, size: 50, color: Colors.red,),
-                         CloseButton(),
-                         BackButton(),
-                         Chip(
-                           avatar: Icon(Icons.flare, color: Colors.white,),
-                           label: Text("  火  ", style: TextStyle(color: Colors.white),),
-                           backgroundColor: Colors.red,
-                         ),
-                         Divider( //分割線
-                           height: 10, //コンテナの高さ
-                           indent: 10, //左側への距離
-                           color: Colors.orange,
-                         ),
-                         Card(
-                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(40.0))), //圓角
-                           color: Colors.blue,
-                           elevation: 5,//シャドウ
-                           margin: EdgeInsets.all(10), //上下左右10
-                           child: Container(
-                               padding: EdgeInsets.all(10),
-                               child: Text(
-                                 "I am Card",
-                                 style: TextStyle(color: Colors.blue),
-                               )
-                           ),
-                         ),
-                         AlertDialog(
-                           title: Text('i an alert'),
-                           content: Text("dadadadawdawdad"),
-                         )
+                         _item("page1", Colors.deepPurple),
+                         _item("page2", Colors.green),
+                         _item("page3", Colors.red)
                        ],
                      ),
                    )
@@ -89,5 +75,14 @@ class _StateFullGroupState extends State<StateFullGroup> {
   Future<Null>_handleRedresh() async{ //timeoutの設定
     await Future.delayed(Duration(microseconds: 200));
     return null;
+  }
+
+  _item(String title, Color color) {
+    return Container(
+      padding: EdgeInsets.only(top: 10),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(color: color),
+      child: Text(title, style: TextStyle(fontSize: 22, color: Colors.white),),
+    );
   }
 }
