@@ -22,7 +22,6 @@ flutter pub get
 # StatelessWidget(state変換無しのwidget)
 ```
 静的ページのこと
-
 - Container
 - Text
 - Icon
@@ -32,6 +31,16 @@ flutter pub get
 - Divider
 - Card
 - AlertDialog
+```
 
-
+# StatefulWidget
+```
+- MaterialApp (根)
+- Scaffold (ナビゲーション、AppBarなどが含まれる)
+- AppBar (Topにあるナビ)
+- BottomNavigationBar (bottomにあるナビ)
+- RefreshIndicator (リロード)
+- image
+- TextField (入力欄)
+- PageView
 ```
