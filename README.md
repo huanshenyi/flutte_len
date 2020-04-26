@@ -69,3 +69,5 @@ flutter pub get
   - Positioned (よくStackと一緒に使用)
   - Flexible Expanded (親containerでどのくらい展開できる)
 ```
+
+# routerの使用

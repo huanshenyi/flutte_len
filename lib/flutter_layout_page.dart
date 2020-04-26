@@ -13,7 +13,15 @@ class _FlutterLayoutPage extends State<FlutterLayoutPage> {
     return MaterialApp(
       title: "Flutter layout",
       home: Scaffold(
-        appBar: AppBar(title: Text("StateFullWidgetの使用"), backgroundColor: Colors.orange,),
+        appBar: AppBar(
+          title: Text("StateFullWidgetの使用",),
+          leading: GestureDetector( //左側のwidget
+            onTap: (){
+              Navigator.pop(context); //現在のページから脱出
+            },
+            child: Icon(Icons.arrow_back),
+          ),
+          backgroundColor: Colors.orange,),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: this._currentIndex,
             onTap: (index){ //itemのクリックイベント

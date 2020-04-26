@@ -3,9 +3,8 @@ import 'package:flutter_len/flutter_layout_page.dart';
 import 'package:flutter_len/less_group_page.dart';
 import 'package:flutter_len/plugin_use.dart';
 import 'package:flutter_len/statefull_group_page.dart';
-import 'package:flutter_len/statelesswidget_test.dart';
 
-void main() => runApp(FlutterLayoutPage());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -16,54 +15,64 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Flutterのルート使用"),
+        ),
+        body: RouteNavigator(),
+      ),
+      routes: <String, WidgetBuilder>{ //ルート別名定義
+        "plugin": (BuildContext context) => PluginUse(),
+        "less":(BuildContext context) => LessGroupPage(),
+        "ful":(BuildContext context) => StateFullGroup(),
+        "layout":(BuildContext context) => FlutterLayoutPage(),
+      }
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class RouteNavigator extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _RouteNavigator createState() => _RouteNavigator();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _RouteNavigator extends State<RouteNavigator> {
+  bool byName = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+    return Container(
+      child: Column(
+        children: <Widget>[
+          SwitchListTile(
+              title: Text("${byName? '': "no"} ルートネームで飛ぶ"),
+              value: byName,
+              onChanged: (value) {
+              setState(() {
+                 byName = value;
+            });
+          }),
+          _item("plugの使用", PluginUse(), "plugin"),
+          _item("LessGroupPageWidget", LessGroupPage(), "less"),
+          _item("StateFullGroupWidget", StateFullGroup(), "ful"),
+          _item("flutterlayout", FlutterLayoutPage(), "layout"),
+        ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  _item(String title, page, String routeName) {
+     return Container(
+       child: RaisedButton(
+         onPressed: (){
+           if(byName){
+             Navigator.pushNamed(context, routeName); //routerの別名使用
+           }else{
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>page)); //使用しない
+           }
+       },
+         child: Text(title),
+       ),
+     );
+  }
+
 }

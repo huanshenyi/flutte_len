@@ -13,7 +13,13 @@ class _StateFullGroupState extends State<StateFullGroup> {
     return MaterialApp(
       title: "StateFullWidgetの使用",
       home: Scaffold(
-        appBar: AppBar(title: Text("StateFullWidgetの使用"), backgroundColor: Colors.orange,),
+        appBar: AppBar(title: Text("StateFullWidgetの使用"), backgroundColor: Colors.orange,
+          leading: GestureDetector( //左側のwidget
+            onTap: (){
+               Navigator.pop(context); //現在のページから脱出
+            },
+          child: Icon(Icons.arrow_back),
+        )),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: this._currentIndex,
             onTap: (index){ //itemのクリックイベント
