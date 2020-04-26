@@ -110,11 +110,41 @@ class _FlutterLayoutPage extends State<FlutterLayoutPage> {
                     bottom: 0,
                     child: Image.network( "https://best-longstay.com/images/pokemon/illust/7/togedemaru.jpg",height: 50,width: 50,),)
                 ],
+              ),
+              Wrap(
+                //Warp,左から右へ、自動改行
+                spacing: 8 ,//水平距離
+                runSpacing: 6,//垂直距離
+                children: <Widget>[
+                  _chip("Flutter1"),
+                  _chip("Flutter2"),
+                  _chip("Flutter3"),
+                  _chip("Flutter4"),
+                  _chip("Flutter5"),
+                ],
               )
             ],
           ),
           onRefresh: _handleRedresh,)
-            : Text("listページです"),
+            : Column(
+            children: <Widget>[
+             Text("list"),
+             Expanded( //縦幅Maxを使用
+               child:Container(
+               decoration: BoxDecoration(
+                   color: Colors.red
+               ),
+               child: Column(
+                 children: <Widget>[
+                   Text("何か1"),
+                   Text("何か2"),
+                   Text("何か3"),
+                 ],
+               )
+               ,
+             ))
+          ],
+        ),
       ),
     );
   }
@@ -129,6 +159,19 @@ class _FlutterLayoutPage extends State<FlutterLayoutPage> {
       alignment: Alignment.center,
       decoration: BoxDecoration(color: color),
       child: Text(title, style: TextStyle(fontSize: 22, color: Colors.white),),
+    );
+  }
+
+  _chip(String label) {
+    return Chip(
+      label: Text(label),
+      avatar: CircleAvatar(
+        backgroundColor: Colors.blue.shade900,
+        child: Text(
+          label.substring(0,1), //文字列最初のを取る
+          style: TextStyle(fontSize: 10),
+        ),
+      ),
     );
   }
 }
