@@ -3,6 +3,7 @@ import 'package:flutter_len/flutter_layout_page.dart';
 import 'package:flutter_len/gesture_page.dart';
 import 'package:flutter_len/less_group_page.dart';
 import 'package:flutter_len/plugin_use.dart';
+import 'package:flutter_len/res_page.dart';
 import 'package:flutter_len/statefull_group_page.dart';
 
 void main() => runApp(MyApp());
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         "less":(BuildContext context) => LessGroupPage(),
         "ful":(BuildContext context) => StateFullGroup(),
         "layout":(BuildContext context) => FlutterLayoutPage(),
-        "gesture":(BuildContext context) => GesturePage()
+        "gesture":(BuildContext context) => GesturePage(),
+        "res":(BuildContext context) => ResPage(),
       }
     );
   }
@@ -57,7 +59,8 @@ class _RouteNavigator extends State<RouteNavigator> {
           _item("LessGroupPageWidget", LessGroupPage(), "less"),
           _item("StateFullGroupWidget", StateFullGroup(), "ful"),
           _item("flutterlayout", FlutterLayoutPage(), "layout"),
-          _item("ボタンクリックページ", GesturePage(), "gesture")
+          _item("ボタンクリックページ", GesturePage(), "gesture"),
+          _item("リソースの使用", ResPage(), "res")
         ],
       ),
     );
