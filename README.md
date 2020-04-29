@@ -71,3 +71,8 @@ flutter pub get
 ```
 
 # routerの使用
+
+# flutterの中で他のappをひらく
+```
+https://pub.dev/packages/url_launcher#-installing-tab-
+```
