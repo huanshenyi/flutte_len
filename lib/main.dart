@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_len/app_lifecycle.dart';
 import 'package:flutter_len/flutter_layout_page.dart';
 import 'package:flutter_len/flutter_widget_lifecycle.dart';
 import 'package:flutter_len/gesture_page.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         "res":(BuildContext context) => ResPage(),
         "launch":(BuildContext context) => LaunchPage(),
         "WidgetLifecycle":(BuildContext context) => WidgetLifecycle(),
+        "appLifecycle":(BuildContext context)=> AppLifecycle(),
       }
     );
   }
@@ -66,7 +68,8 @@ class _RouteNavigator extends State<RouteNavigator> {
           _item("ボタンクリックページ", GesturePage(), "gesture"),
           _item("リソースの使用", ResPage(), "res"),
           _item("flutterで他のアプリを開く", LaunchPage(), "launch"),
-          _item("WidgetLifecycle", WidgetLifecycle(), "WidgetLifecycle")
+          _item("WidgetLifecycle", WidgetLifecycle(), "WidgetLifecycle"),
+          _item("appライフサイクル", AppLifecycle(), "appLifecycle")
         ],
       ),
     );
