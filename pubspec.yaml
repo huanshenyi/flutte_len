@@ -1,6 +1,7 @@
 name: flutter_len
 description: A new Flutter application.
-
+module:
+    androidX: true
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
 # followed by an optional build number separated by a +.
@@ -25,6 +26,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   flutter_color_plugin: ^0.0.2
   url_launcher: ^5.0.2
+  image_picker: ^0.6.5+3
 
 dev_dependencies:
   flutter_test:

@@ -81,3 +81,9 @@ https://pub.dev/packages/url_launcher#-installing-tab-
 ```
 https://fonts.google.com/specimen/Rubik+Mono+One?selection.family=Rubik+Mono+One&sidebar.open
 ```
+
+# imageアプリ関連
+```
+image扱うライブラリ
+  https://pub.dev/packages/image_picker#-installing-tab-
+```

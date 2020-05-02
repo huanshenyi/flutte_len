@@ -36,8 +36,6 @@ class _AppLifecycleState extends State<AppLifecycle> with WidgetsBindingObserver
       print("Appフロントに入る");
     }else if(state == AppLifecycleState.inactive){
       //あんまり使用しない、Appアクディームではない時、例え電話が来た時
-    }else if(state == AppLifecycleState.suspending){
-      ///Iosにはない
     }
   }
 

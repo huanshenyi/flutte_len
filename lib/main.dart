@@ -5,6 +5,7 @@ import 'package:flutter_len/flutter_widget_lifecycle.dart';
 import 'package:flutter_len/gesture_page.dart';
 import 'package:flutter_len/launch_page.dart';
 import 'package:flutter_len/less_group_page.dart';
+import 'package:flutter_len/photo_app_page.dart';
 import 'package:flutter_len/plugin_use.dart';
 import 'package:flutter_len/res_page.dart';
 import 'package:flutter_len/statefull_group_page.dart';
@@ -62,6 +63,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
           "launch":(BuildContext context) => LaunchPage(),
           "WidgetLifecycle":(BuildContext context) => WidgetLifecycle(),
           "appLifecycle":(BuildContext context)=> AppLifecycle(),
+          "photoAppPage":(BuildContext context) => PhotoApp(),
         }
     );
   }
@@ -95,7 +97,8 @@ class _RouteNavigator extends State<RouteNavigator> {
           _item("リソースの使用", ResPage(), "res"),
           _item("flutterで他のアプリを開く", LaunchPage(), "launch"),
           _item("WidgetLifecycle", WidgetLifecycle(), "WidgetLifecycle"),
-          _item("appライフサイクル", AppLifecycle(), "appLifecycle")
+          _item("appライフサイクル", AppLifecycle(), "appLifecycle"),
+          _item("photoアプリ", PhotoApp(), "photoAppPage")
         ],
       ),
     );
