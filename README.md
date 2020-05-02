@@ -76,3 +76,8 @@ flutter pub get
 ```
 https://pub.dev/packages/url_launcher#-installing-tab-
 ```
+
+# 文字fontダウンロード
+```
+https://fonts.google.com/specimen/Rubik+Mono+One?selection.family=Rubik+Mono+One&sidebar.open
+```

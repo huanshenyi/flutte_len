@@ -23,6 +23,8 @@ class _DynamicThemeState extends State<DynamicTheme> {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
+          //グローバルfontの使用
+          //fontFamily: "RubikMonoOne",
           //夜間モード
           brightness: this._brightness,
           primarySwatch: Colors.blue,
@@ -34,7 +36,8 @@ class _DynamicThemeState extends State<DynamicTheme> {
           body: Column(
             children: <Widget>[
               RaisedButton(
-                child: Text("モードチェンジ", style: TextStyle(fontSize: 20),),
+                // fontのローカル使用
+                child: Text("モードチェンジabc", style: TextStyle(fontSize: 20, fontFamily:"RubikMonoOne"),),
                 onPressed: (){
                   setState(() {
                     if(_brightness == Brightness.dark){
