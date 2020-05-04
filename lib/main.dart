@@ -10,6 +10,7 @@ import 'package:flutter_len/placeholder_page.dart';
 import 'package:flutter_len/plugin_use.dart';
 import 'package:flutter_len/res_page.dart';
 import 'package:flutter_len/statefull_group_page.dart';
+import 'package:flutter_len/tabbedbar_page.dart';
 
 void main() => runApp(DynamicTheme());
 
@@ -66,6 +67,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
           "appLifecycle":(BuildContext context)=> AppLifecycle(),
           "photoAppPage":(BuildContext context) => PhotoApp(),
           "placeholder":(BuildContext context) => PlaceholderPage(),
+          "TabbedAppBarSample": (BuildContext context) => TabbedAppBarSample()
         }
     );
   }
@@ -101,7 +103,8 @@ class _RouteNavigator extends State<RouteNavigator> {
           _item("WidgetLifecycle", WidgetLifecycle(), "WidgetLifecycle"),
           _item("appライフサイクル", AppLifecycle(), "appLifecycle"),
           _item("photoアプリ", PhotoApp(), "photoAppPage"),
-          _item("placeholderページ", PlaceholderPage(), "placeholderページ")
+          _item("placeholderページ", PlaceholderPage(), "placeholder"),
+          _item("TabbedAppBarSample", TabbedAppBarSample(), "TabbedAppBarSample")
         ],
       ),
     );
