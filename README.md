@@ -87,3 +87,16 @@ https://fonts.google.com/specimen/Rubik+Mono+One?selection.family=Rubik+Mono+One
 image扱うライブラリ
   https://pub.dev/packages/image_picker#-installing-tab-
 ```
+
+# placeholder使用関連
+```
+ライブラリ
+https://pub.dev/packages/transparent_image
+```
+
+# 画像cached
+
+```
+ライブラリ
+https://pub.dev/packages/cached_network_image
+```

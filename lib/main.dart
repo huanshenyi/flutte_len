@@ -6,6 +6,7 @@ import 'package:flutter_len/gesture_page.dart';
 import 'package:flutter_len/launch_page.dart';
 import 'package:flutter_len/less_group_page.dart';
 import 'package:flutter_len/photo_app_page.dart';
+import 'package:flutter_len/placeholder_page.dart';
 import 'package:flutter_len/plugin_use.dart';
 import 'package:flutter_len/res_page.dart';
 import 'package:flutter_len/statefull_group_page.dart';
@@ -64,6 +65,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
           "WidgetLifecycle":(BuildContext context) => WidgetLifecycle(),
           "appLifecycle":(BuildContext context)=> AppLifecycle(),
           "photoAppPage":(BuildContext context) => PhotoApp(),
+          "placeholder":(BuildContext context) => PlaceholderPage(),
         }
     );
   }
@@ -79,7 +81,7 @@ class _RouteNavigator extends State<RouteNavigator> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
+      child: Wrap(
         children: <Widget>[
           SwitchListTile(
               title: Text("${byName? '': "no"} ルートネームで飛ぶ"),
@@ -98,7 +100,8 @@ class _RouteNavigator extends State<RouteNavigator> {
           _item("flutterで他のアプリを開く", LaunchPage(), "launch"),
           _item("WidgetLifecycle", WidgetLifecycle(), "WidgetLifecycle"),
           _item("appライフサイクル", AppLifecycle(), "appLifecycle"),
-          _item("photoアプリ", PhotoApp(), "photoAppPage")
+          _item("photoアプリ", PhotoApp(), "photoAppPage"),
+          _item("placeholderページ", PlaceholderPage(), "placeholderページ")
         ],
       ),
     );
@@ -106,6 +109,7 @@ class _RouteNavigator extends State<RouteNavigator> {
 
   _item(String title, page, String routeName) {
      return Container(
+       padding: EdgeInsets.only(left: 5),
        child: RaisedButton(
          onPressed: (){
            if(byName){
