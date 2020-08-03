@@ -1,5 +1,5 @@
 ## 全部layout関連のコンポネント
-![images](/flutter_len/lens/flutterのlayout関連/image.PNG)
+![images](https://github.com/huanshenyi/flutte_len/blob/master/lens/flutter%E3%81%AElayout%E9%96%A2%E9%80%A3/image.PNG)
 
 - SingleChildRenderObjectWidget
   - Opacity (透明度変化)
