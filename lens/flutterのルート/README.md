@@ -1,4 +1,4 @@
-![main](/flutter_len/lens/flutterのルート/router.PNG)
+![main](https://github.com/huanshenyi/flutte_len/blob/master/lens/flutter%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%88/router.PNG)
 
 ## ルートを定義(二種類)
 - Navigator.pushNamed(context, routeName);
