@@ -1,3 +1,5 @@
+![main](/flutter_len/lens/flutterのルート/router.PNG)
+
 ## ルートを定義(二種類)
 - Navigator.pushNamed(context, routeName);
 - Navigator.push(context, MaterialPageRoute(builder: (context)=>page));
