@@ -35,7 +35,7 @@ class DrawerDemo extends StatelessWidget {
 # タブーナビゲーション
  タブーでページ移転する
  
- ![tab](../../lens/タグバー、左のドラグバーなど/drawer.PNG)
+ ![tab](../../lens/タグバー、左のドラグバーなど/tabnav.PNG)
  
  ```dart
 import 'package:flutter/material.dart';
