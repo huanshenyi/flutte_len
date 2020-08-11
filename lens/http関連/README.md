@@ -32,7 +32,8 @@ class _HttpTestState extends State<HttpTest> {
   Future<List<TagModel>> fetchGet() async{
     var url = "http://192.168.10.115:8000/goodss/tag";
     final response = await http.get(url, headers: headers);
-    List result = json.decode(response.body);
+    Utf8Decoder utf8decoder = Utf8Decoder(); //漢字文字化け処理
+    List result = json.decode(utf8decoder.convert(response.bodyBytes));
     List<TagModel> tagmodellist = result.map((m) => new TagModel.fromJson(m)).toList(); //リストのデータを変換
     print(tagmodellist);
     return tagmodellist;
